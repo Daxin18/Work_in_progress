@@ -6,7 +6,7 @@ using UnityEngine;
 public class LevelBase : MonoBehaviour
 {
     private GameObject finish;
-    public GameObject nextLevel; //will be Scene, not yet sure if I it's a GameObject, bur when using Scene all of it breaks
+    public GameObject nextLevel; //leaving it like this for now - it's supposed to be a scene
 
 
     private void Start()

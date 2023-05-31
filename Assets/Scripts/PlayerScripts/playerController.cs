@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour
     {
         //animator = this.GetComponent<Animator>(); //for animations
         rigidBody = this.GetComponent<Rigidbody2D>(); //aka player body
+        Physics.IgnoreLayerCollision(6, 7); //ignores collisions betweeen layer 6 (Player) and 7 (Finish)
     }
     
     void FixedUpdate()
