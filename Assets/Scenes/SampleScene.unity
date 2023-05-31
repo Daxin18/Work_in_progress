@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 377534194}
   - component: {fileID: 377534197}
   - component: {fileID: 377534196}
+  - component: {fileID: 377534200}
   - component: {fileID: 377534198}
   m_Layer: 0
   m_Name: Player
@@ -192,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38ea2c517bf44245ac6e909b0b1c501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 4
+  movementSpeed: 2
 --- !u!212 &377534197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -287,7 +288,19 @@ MonoBehaviour:
     m_ActionId: 916e9c95-7891-4289-ab88-a78e59b3efa7
     m_ActionName: Player_1/Move
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 377534200}
+        m_TargetAssemblyTypeName: MechanicHolder, Assembly-CSharp
+        m_MethodName: _Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 39fe814d-ee18-4357-a69e-e0774993880f
     m_ActionName: Player_1/Interact
   - m_PersistentCalls:
@@ -319,6 +332,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.006091416, y: 0}
   m_Size: {x: 0.16771433, y: 0.32}
   m_Direction: 0
+--- !u!114 &377534200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377534193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f921a2e7425f5634d8498a51b89b57a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mechanic: {fileID: 11400000, guid: 9adcb7bb65896f443a5a1a1c4c639c3e, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
