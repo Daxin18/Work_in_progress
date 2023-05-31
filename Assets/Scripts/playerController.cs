@@ -17,6 +17,7 @@ public class playerController : MonoBehaviour
     void Start()
     {
         //animator = this.GetComponent<Animator>();
+        Screen.SetResolution(640, 480, FullScreenMode.ExclusiveFullScreen, 60);
         rigidBody = this.GetComponent<Rigidbody2D>();
     }
     
