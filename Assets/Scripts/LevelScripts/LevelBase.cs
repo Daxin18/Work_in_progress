@@ -8,7 +8,7 @@ public class LevelBase : MonoBehaviour
     public GameObject finish;
     public GameObject nextLevel;
 
-    private int id = 0; //level identification
+    private int id = 0; //don't really think it's useful, but gonna leave it here for now
 
     //may want to change some stuff here - the class is barely needed
     private void Start()

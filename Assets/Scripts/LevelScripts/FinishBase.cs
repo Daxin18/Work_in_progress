@@ -15,11 +15,9 @@ public class FinishBase : MonoBehaviour
         {
             enteranceCounter++;
 
-            //TODO: load next level here
             Instantiate(nextLevel);
             Destroy(currentLevel);
 
-            //Debug.Log("Loading level: " + nextLevel);
         }
     }
 }
