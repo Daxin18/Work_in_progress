@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FinishBase : MonoBehaviour
 {
-    public int nextLevel = 0;
+    public GameObject currentLevel;
+    public GameObject nextLevel;
     public int enteranceCounter = 0; //for safety
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -15,8 +16,10 @@ public class FinishBase : MonoBehaviour
             enteranceCounter++;
 
             //TODO: load next level here
+            Instantiate(nextLevel);
+            Destroy(currentLevel);
 
-            Debug.Log("Loading level: " + nextLevel);
+            //Debug.Log("Loading level: " + nextLevel);
         }
     }
 }
