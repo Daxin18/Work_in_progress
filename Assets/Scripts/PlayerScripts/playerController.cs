@@ -8,14 +8,18 @@ public class playerController : MonoBehaviour
 {
     //private Animator animator;
     private Rigidbody2D rigidBody;
+    public GameObject deadBody; //reference to a dead body for a multiplayer level
 
     private Vector2 direction = Vector2.zero;
     public float movementSpeed = 2.0f;
     private bool facingRight = true;
 
+    private Vector2 startingPosition = new Vector2(0, 0); //starting point of any level
+
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.transform.position = startingPosition;
         //animator = this.GetComponent<Animator>(); //for animations
         rigidBody = this.GetComponent<Rigidbody2D>(); //aka player body
         Physics.IgnoreLayerCollision(6, 7); //ignores collisions betweeen layer 6 (Player) and 7 (Finish)
@@ -57,5 +61,19 @@ public class playerController : MonoBehaviour
         Vector3 localscale = transform.localScale;
         localscale.x *= -1f;
         transform.localScale = localscale;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Attack")
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        deadBody.transform.position = gameObject.transform.position; //teleport dead body to current position
+        gameObject.transform.position = startingPosition; //reset player position
     }
 }
