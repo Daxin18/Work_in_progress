@@ -14,7 +14,7 @@ public class playerController : MonoBehaviour
     public float movementSpeed = 2.0f;
     private bool facingRight = true;
 
-    private Vector2 startingPosition = new Vector2(0, 0); //starting point of any level
+    private Vector2 startingPosition = new Vector2(-10, 0); //starting point of any level
 
     // Start is called before the first frame update
     void Start()
