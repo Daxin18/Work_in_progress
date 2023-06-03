@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: New TEST_move_up
   m_EditorClassIdentifier: 
   name: move_up
-  cooldownTime: 5
+  cooldownTime: 3

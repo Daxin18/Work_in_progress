@@ -12,10 +12,11 @@ public class LeverInteraction : InteractionMechanic //just a test mechanic to se
     {
         if (inRange)
         {
-            Rigidbody2D player = parent.GetComponent<Rigidbody2D>();
+            //Rigidbody2D player = parent.GetComponent<Rigidbody2D>();
             GameObject door = GameObject.Find("Door");
             if (door != null)
             {
+                //TODO: animacja
                 Destroy(door);
             }
             else
