@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEditor.SearchService;
 using UnityEngine;
 
@@ -26,5 +27,11 @@ public class LevelBase : MonoBehaviour
         finishScript.currentLevel = gameObject;
         finishScript.nextLevel = nextLevel;
         finishScript.enteranceCounter = 0;
+
+        //first narrator text in the level has to be named Intro
+        Thread.Sleep(2000);
+        GameObject narrator = GameObject.Find("Intro");
+        if (narrator != null)
+            narrator.GetComponent<Narrator>().Say();
     }
 }
