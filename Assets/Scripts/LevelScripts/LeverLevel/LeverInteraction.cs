@@ -16,6 +16,9 @@ public class LeverInteraction : InteractionMechanic //just a test mechanic to se
             GameObject door = GameObject.Find("Door");
             if (door != null)
             {
+                GameObject narrator = GameObject.Find("LeverComment");
+                if (narrator != null)
+                    narrator.GetComponent<Narrator>().Say();
                 //TODO: animacja
                 Destroy(door);
                 return true;

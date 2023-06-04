@@ -16,6 +16,11 @@ public class TimeTravelInteraction : InteractionMechanic
         var isGloveOn = GameObject.FindGameObjectWithTag("TimeTravel").GetComponent<TimeTravelTracking>().isGloveOn;
         if (isGloveOn)
         {
+            int travelCount = GameObject.FindGameObjectWithTag("TimeTravel").GetComponent<TimeTravelTracking>().incrementTravelCount();
+            if (travelCount == 1)
+                CommentEvent("FirstTimeTravel");
+            if (travelCount == 30)
+                CommentEvent("TooMuchTravel");
             Vector3 helper = now.position;
             now.position = future.position;
             future.position = helper;
@@ -23,11 +28,19 @@ public class TimeTravelInteraction : InteractionMechanic
         }
         else if (inRange)
         {
+            CommentEvent("GlovePickup");
             GameObject.FindGameObjectWithTag("TimeTravel").GetComponent<TimeTravelTracking>().TakeGlove();
             now = GameObject.Find("Now").transform;
             future = GameObject.Find("Future").transform;
             return true;
         }
         return false;
+    }
+
+    private void CommentEvent(string narratedEvent)
+    {
+        GameObject narrator = GameObject.Find(narratedEvent);
+        if (narrator != null)
+            narrator.GetComponent<Narrator>().Say();
     }
 }
