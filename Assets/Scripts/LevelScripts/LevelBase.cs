@@ -29,7 +29,12 @@ public class LevelBase : MonoBehaviour
         finishScript.enteranceCounter = 0;
 
         //first narrator text in the level has to be named Intro
-        Thread.Sleep(2000);
+        StartCoroutine(WaitAndSay());
+    }
+
+    IEnumerator WaitAndSay()
+    {
+        yield return new WaitForSeconds(0.1f);
         GameObject narrator = GameObject.Find("Intro");
         if (narrator != null)
             narrator.GetComponent<Narrator>().Say();

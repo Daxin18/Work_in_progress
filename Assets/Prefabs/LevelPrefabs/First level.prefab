@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f921a2e7425f5634d8498a51b89b57a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechanic: {fileID: 11400000, guid: 9adcb7bb65896f443a5a1a1c4c639c3e, type: 2}
+  mechanic: {fileID: 11400000, guid: 89998eb49af958c44b203f3a634f0907, type: 2}
 --- !u!114 &7733765406186986758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10826,7 +10826,7 @@ PrefabInstance:
     - target: {fileID: 6038421692742729795, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 3def39b5c25efe04da17f15f025608fe, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
 --- !u!4 &5466494843872518978 stripped
