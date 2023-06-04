@@ -39,25 +39,14 @@ public class Narrator : MonoBehaviour
 
     public void Say()
     {
-        //Debug.Log("I'm in");
         source = GetComponent<AudioSource>();
         if (!source.isPlaying)
         {
-            //Debug.Log("I'm in, but deeper");
             if (!alreadySaid)
             {
                 alreadySaid = true;
-                //Debug.Log("WTF");
                 source.Play();
                 canvas.SetActive(true);
-
-                //while (source.isPlaying) { } //wait for sound to finish
-                /*
-                canvas.SetActive(false);
-                if (nextAudio != null)
-                {
-                    nextAudio.GetComponent<Narrator>().Say();
-                }*/
             }
         }
     }

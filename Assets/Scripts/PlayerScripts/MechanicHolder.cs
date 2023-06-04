@@ -35,9 +35,12 @@ public class MechanicHolder : MonoBehaviour
     {
         if(state == InteractionState.ready)
         {
-            mechanic.Interact(gameObject); //aka self
-            state = InteractionState.cooldown;
-            cooldownTime = mechanic.cooldownTime;
+            bool success = mechanic.Interact(gameObject); //aka self
+            if (success)
+            {
+                state = InteractionState.cooldown;
+                cooldownTime = mechanic.cooldownTime;
+            }
         }
     }
 }

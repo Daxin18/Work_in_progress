@@ -6,9 +6,9 @@ using UnityEngine;
 public class TEST_move_up : InteractionMechanic //just a test mechanic to see if everything works
 {
 
-    public override void Interact(GameObject parent)
+    public override bool Interact(GameObject parent)
     {
-        GameObject narrator = GameObject.Find("Narrator");
-        narrator.GetComponent<Narrator>().Say();
+        //test stuff here
+        return true;
     }
 }

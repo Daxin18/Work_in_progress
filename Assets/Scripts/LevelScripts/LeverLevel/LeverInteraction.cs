@@ -8,7 +8,7 @@ public class LeverInteraction : InteractionMechanic //just a test mechanic to se
     public GameObject lever;
     public bool inRange = false;
 
-    public override void Interact(GameObject parent)
+    public override bool Interact(GameObject parent)
     {
         if (inRange)
         {
@@ -18,11 +18,13 @@ public class LeverInteraction : InteractionMechanic //just a test mechanic to se
             {
                 //TODO: animacja
                 Destroy(door);
+                return true;
             }
             else
             {
                 //Debug.Log("No door found");
             }
         }
+        return false;
     }
 }
