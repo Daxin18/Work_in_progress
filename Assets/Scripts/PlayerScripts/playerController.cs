@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class playerController : MonoBehaviour
 {
-    //private Animator animator;
+    private Animator animator;
     private Rigidbody2D rigidBody;
     public GameObject deadBody; //reference to a dead body for a multiplayer level
 
@@ -20,7 +20,7 @@ public class playerController : MonoBehaviour
     void Start()
     {
         gameObject.transform.position = startingPosition;
-        //animator = this.GetComponent<Animator>(); //for animations
+        animator = this.GetComponent<Animator>(); //for animations
         rigidBody = this.GetComponent<Rigidbody2D>(); //aka player body
         Physics.IgnoreLayerCollision(6, 7); //ignores collisions betweeen layer 6 (Player) and 7 (Finish)
     }
@@ -38,18 +38,18 @@ public class playerController : MonoBehaviour
         //setting variables to go between animation states
         if (direction != Vector2.zero)
         {
-            //animator.SetBool("isWalking", true);
+            animator.SetBool("isWalking", true);
         }
         else
         {
-            //animator.SetBool("isWalking", false);
+            animator.SetBool("isWalking", false);
         }
     }
 
     //called on move
     public void _Move(InputAction.CallbackContext context)
     {
-        //animator.SetBool("isWalking", true);
+        animator.SetBool("isWalking", true);
         //Debug.Log(direction); //for testing purposes
         direction = context.action.ReadValue<Vector2>();
     }
