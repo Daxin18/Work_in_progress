@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Attack
   - TimeTravel
+  - Door
   layers:
   - Default
   - TransparentFX

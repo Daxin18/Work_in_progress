@@ -63,15 +63,7 @@ public class playerController : MonoBehaviour
         transform.localScale = localscale;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Attack")
-        {
-            Die();
-        }
-    }
-
-    private void Die()
+    public void Die()
     {
         deadBody.transform.position = gameObject.transform.position; //teleport dead body to current position
         gameObject.transform.position = startingPosition; //reset player position
