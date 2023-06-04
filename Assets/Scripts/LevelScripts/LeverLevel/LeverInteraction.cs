@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu] //this makes it so we can create object in unity and change all the InteractionMechanic variables
 public class LeverInteraction : InteractionMechanic //just a test mechanic to see if everything works
 {
-    public GameObject lever;
     public bool inRange = false;
 
     public override bool Interact(GameObject parent)
@@ -19,8 +18,16 @@ public class LeverInteraction : InteractionMechanic //just a test mechanic to se
                 GameObject narrator = GameObject.Find("LeverComment");
                 if (narrator != null)
                     narrator.GetComponent<Narrator>().Say();
-                //TODO: animacja
-                Destroy(door);
+                GameObject lever = GameObject.Find("Lever");
+                if (lever != null)
+                {
+                    lever.GetComponent<Animator>().SetBool("LeverUp", true);
+                }
+
+                //
+                // deleting doors in LeverBehaviourManager.cs (aka script for LeverUp state)
+                //
+
                 return true;
             }
             else
