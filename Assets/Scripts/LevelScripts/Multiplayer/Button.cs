@@ -9,17 +9,17 @@ public class Button : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "DeadBody")
             level.GetComponent<ButtonManager>().SetButton(isButtonA, true);
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "DeadBody")
             level.GetComponent<ButtonManager>().SetButton(isButtonA, true);
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "DeadBody")
             level.GetComponent<ButtonManager>().SetButton(isButtonA, false);
     }
 }
