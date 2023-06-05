@@ -130,9 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2437609294166438616, guid: 0300a713f4260424182488505afe4b3b, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 854
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437609294166438616, guid: 0300a713f4260424182488505afe4b3b, type: 3}
+      propertyPath: m_RefResolutionY
+      value: 480
+      objectReference: {fileID: 0}
     - target: {fileID: 9116227480476776289, guid: 0300a713f4260424182488505afe4b3b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9116227480476776289, guid: 0300a713f4260424182488505afe4b3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,24 +192,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0300a713f4260424182488505afe4b3b, type: 3}
---- !u!1001 &3600066826062385411
+--- !u!1001 &400003507
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5812907352104507138, guid: 7b018aed9c6428347a62e965c3331dd2, type: 3}
-      propertyPath: m_TagString
-      value: DeadBody
-      objectReference: {fileID: 0}
     - target: {fileID: 8502348974069361850, guid: 7b018aed9c6428347a62e965c3331dd2, type: 3}
       propertyPath: m_Name
       value: Multiplayer
       objectReference: {fileID: 0}
     - target: {fileID: 8502348974069361853, guid: 7b018aed9c6428347a62e965c3331dd2, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8502348974069361853, guid: 7b018aed9c6428347a62e965c3331dd2, type: 3}
       propertyPath: m_LocalPosition.x

@@ -25,6 +25,8 @@ public class Attack : MonoBehaviour
         if (collision != parent && collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<playerController>().Die();
+            KillCounter counter = GameObject.FindGameObjectWithTag("Multiplayer").GetComponent<KillCounter>();
+            counter.countKill();
         }
     }
 

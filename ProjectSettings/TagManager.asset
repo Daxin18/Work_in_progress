@@ -8,6 +8,7 @@ TagManager:
   - TimeTravel
   - Door
   - DeadBody
+  - Multiplayer
   layers:
   - Default
   - TransparentFX

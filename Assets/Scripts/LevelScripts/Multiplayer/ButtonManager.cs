@@ -8,6 +8,8 @@ public class ButtonManager : MonoBehaviour
     public bool ButtonA = false;
     public bool ButtonB = false;
     public GameObject doorPrefab;
+    private bool narrateFirstButton = false;
+    private bool ableToSay = true;
 
     public void FixedUpdate()
     {
@@ -26,6 +28,14 @@ public class ButtonManager : MonoBehaviour
                 Instantiate(doorPrefab);
             }
         }
+
+        if (ableToSay && narrateFirstButton)
+        {
+            ableToSay = false;
+            GameObject narrator = GameObject.Find("FirstButton");
+            if (narrator != null)
+                narrator.GetComponent<Narrator>().Say();
+        }
     }
 
     public void SetButton(bool isButtonA, bool value)
@@ -38,5 +48,6 @@ public class ButtonManager : MonoBehaviour
         {
             ButtonB = value;
         }
+        narrateFirstButton = value ? value : narrateFirstButton;
     }
 }
