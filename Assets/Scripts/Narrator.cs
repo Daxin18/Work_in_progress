@@ -12,6 +12,7 @@ public class Narrator : MonoBehaviour
     public GameObject nextAudio;
     
     private bool alreadySaid = false;
+    private bool isEnded = false;
     private AudioSource source;
 
     public void Start()
@@ -35,9 +36,13 @@ public class Narrator : MonoBehaviour
                 }
                 else
                 {
-                    GameObject manager = GameObject.Find("NarratorManager");
-                    if (manager != null)
-                        manager.GetComponent<NarratorManager>().EndSpeech();
+                    if (!isEnded)
+                    {
+                        GameObject manager = GameObject.Find("NarratorManager");
+                        if (manager != null)
+                            manager.GetComponent<NarratorManager>().EndSpeech();
+                        isEnded = true;
+                    }
                 }
             }
         }

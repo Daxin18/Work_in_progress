@@ -12,7 +12,7 @@ public class NarratorManager : MonoBehaviour
     {
         if (!isNarratorSpeaking)
         {
-            if(narrators.Peek() != null)
+            if(narrators.Count > 0)
             {
                 isNarratorSpeaking = true;
                 PlayNarrator(narrators.Dequeue());
