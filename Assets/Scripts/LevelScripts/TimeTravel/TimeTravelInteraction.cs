@@ -39,8 +39,8 @@ public class TimeTravelInteraction : InteractionMechanic
 
     private void CommentEvent(string narratedEvent)
     {
-        GameObject narrator = GameObject.Find(narratedEvent);
+        GameObject narrator = GameObject.Find("NarratorManager");
         if (narrator != null)
-            narrator.GetComponent<Narrator>().Say();
+            narrator.GetComponent<NarratorManager>().Say(narratedEvent);
     }
 }

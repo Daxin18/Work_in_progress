@@ -13,6 +13,7 @@ public class playerController : MonoBehaviour
     private Vector2 direction = Vector2.zero;
     public float movementSpeed = 2.0f;
     private bool facingRight = true;
+    public bool isMovementBlocked = false;
 
     private Vector2 startingPosition = new Vector2(-10, 0); //starting point of any level
 
@@ -28,7 +29,10 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         rigidBody.rotation = 0f; //to make sure player character does not spin around
-        rigidBody.velocity = direction * movementSpeed;
+        if (!isMovementBlocked)
+        {
+            rigidBody.velocity = direction * movementSpeed;
+        }
 
         //flipping from left to right, might change to also flip vertically
         if ((!facingRight && direction.x > 0f) || (facingRight && direction.x < 0f))

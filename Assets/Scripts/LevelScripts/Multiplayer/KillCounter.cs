@@ -15,15 +15,15 @@ public class KillCounter : MonoBehaviour
     {
         if (counter == 1)
         {
-            GameObject narrator = GameObject.Find("FirstKill");
+            GameObject narrator = GameObject.Find("NarratorManager");
             if (narrator != null)
-                narrator.GetComponent<Narrator>().Say();
+                narrator.GetComponent<NarratorManager>().Say("FirstKill");
         }
         else if (counter == killThreshold)
         {
-            GameObject narrator = GameObject.Find("AfterXKills");
+            GameObject narrator = GameObject.Find("NarratorManager");
             if (narrator != null)
-                narrator.GetComponent<Narrator>().Say();
+                narrator.GetComponent<NarratorManager>().Say("AfterXKills");
         }
     }
     public void countKill()

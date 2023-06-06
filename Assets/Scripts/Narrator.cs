@@ -33,6 +33,12 @@ public class Narrator : MonoBehaviour
                 {
                     nextAudio.GetComponent<Narrator>().Say();
                 }
+                else
+                {
+                    GameObject manager = GameObject.Find("NarratorManager");
+                    if (manager != null)
+                        manager.GetComponent<NarratorManager>().EndSpeech();
+                }
             }
         }
     }

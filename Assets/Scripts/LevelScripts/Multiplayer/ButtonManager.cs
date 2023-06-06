@@ -32,9 +32,9 @@ public class ButtonManager : MonoBehaviour
         if (ableToSay && narrateFirstButton)
         {
             ableToSay = false;
-            GameObject narrator = GameObject.Find("FirstButton");
+            GameObject narrator = GameObject.Find("NarratorManager");
             if (narrator != null)
-                narrator.GetComponent<Narrator>().Say();
+                narrator.GetComponent<NarratorManager>().Say("FirstButton");
         }
     }
 

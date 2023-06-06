@@ -11,13 +11,12 @@ public class LeverInteraction : InteractionMechanic //just a test mechanic to se
     {
         if (inRange)
         {
-            //Rigidbody2D player = parent.GetComponent<Rigidbody2D>();
             GameObject door = GameObject.Find("Door");
             if (door != null)
             {
-                GameObject narrator = GameObject.Find("LeverComment");
+                GameObject narrator = GameObject.Find("NarratorManager");
                 if (narrator != null)
-                    narrator.GetComponent<Narrator>().Say();
+                    narrator.GetComponent<NarratorManager>().Say("LeverComment");
                 GameObject lever = GameObject.Find("Lever");
                 if (lever != null)
                 {

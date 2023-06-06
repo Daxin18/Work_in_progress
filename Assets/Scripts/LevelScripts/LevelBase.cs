@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class LevelBase : MonoBehaviour
@@ -17,7 +16,7 @@ public class LevelBase : MonoBehaviour
         //there must be a way to do it more elegantly, but it'll do for now
         foreach (Transform child in gameObject.transform)
         {
-            if (child.tag == "Squad Member")
+            if (child.tag == "Finish")
             {
                 finish = child.gameObject;
                 break;
@@ -35,8 +34,8 @@ public class LevelBase : MonoBehaviour
     IEnumerator WaitAndSay()
     {
         yield return new WaitForSeconds(0.1f);
-        GameObject narrator = GameObject.Find("Intro");
+        GameObject narrator = GameObject.Find("NarratorManager");
         if (narrator != null)
-            narrator.GetComponent<Narrator>().Say();
+            narrator.GetComponent<NarratorManager>().Say("Intro");
     }
 }
