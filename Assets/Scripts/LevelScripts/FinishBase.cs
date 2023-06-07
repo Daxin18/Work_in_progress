@@ -15,9 +15,17 @@ public class FinishBase : MonoBehaviour
         {
             enteranceCounter++;
 
-            Instantiate(nextLevel);
-            Destroy(currentLevel);
-
+            StartCoroutine(FadeAndLoadNext());
         }
+    }
+
+    IEnumerator FadeAndLoadNext()
+    {       
+        currentLevel.GetComponent<ObjectFade>().StartFadeOut();
+
+        yield return new WaitForSeconds(ObjectFade.fadeDuration);
+
+        Instantiate(nextLevel);
+        Destroy(currentLevel);
     }
 }
