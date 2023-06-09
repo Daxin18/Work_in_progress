@@ -56,11 +56,15 @@ public class Box : MonoBehaviour
 
     public void Focus()
     {
+        if (next != null)
+            next.GetComponent<SpriteRenderer>().color = new Color(0.8f, 1f, 0.8f);
         box.color = new Color(0.8f, 0.8f, 1f) ;
     }
 
     public void UnFocus()
     {
+        if (next != null && !next.GetComponent<Box>().isReady)
+            next.GetComponent<SpriteRenderer>().color = new Color(0.75f, 0.75f, 0.75f);
         box.color = new Color(1f, 1f, 1f);
     }
 
