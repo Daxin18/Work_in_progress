@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Attack
+  - TimeTravel
+  - Door
+  - DeadBody
+  - Multiplayer
+  - DataFlow
+  - AILever
   layers:
   - Default
   - TransparentFX

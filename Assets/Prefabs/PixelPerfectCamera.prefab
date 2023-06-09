@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9116227480476776289}
   - component: {fileID: 9116227480476776350}
   - component: {fileID: 9116227480476776348}
-  - component: {fileID: 9116227480476776288}
+  - component: {fileID: 2437609294166438616}
   m_Layer: 0
   m_Name: PixelPerfectCamera
   m_TagString: MainCamera
@@ -85,7 +85,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116227480476776349}
   m_Enabled: 1
---- !u!114 &9116227480476776288
+--- !u!114 &2437609294166438616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -12,6 +12,7 @@ public class Narrator : MonoBehaviour
     public GameObject nextAudio;
     
     private bool alreadySaid = false;
+    private bool isEnded = false;
     private AudioSource source;
 
     public void Start()
@@ -33,30 +34,30 @@ public class Narrator : MonoBehaviour
                 {
                     nextAudio.GetComponent<Narrator>().Say();
                 }
+                else
+                {
+                    if (!isEnded)
+                    {
+                        GameObject manager = GameObject.Find("NarratorManager");
+                        if (manager != null)
+                            manager.GetComponent<NarratorManager>().EndSpeech();
+                        isEnded = true;
+                    }
+                }
             }
         }
     }
 
     public void Say()
     {
-        Debug.Log("I'm in");
+        source = GetComponent<AudioSource>();
         if (!source.isPlaying)
         {
-            Debug.Log("I'm in, but deeper");
             if (!alreadySaid)
             {
                 alreadySaid = true;
-                Debug.Log("WTF");
                 source.Play();
                 canvas.SetActive(true);
-
-                //while (source.isPlaying) { } //wait for sound to finish
-                /*
-                canvas.SetActive(false);
-                if (nextAudio != null)
-                {
-                    nextAudio.GetComponent<Narrator>().Say();
-                }*/
             }
         }
     }

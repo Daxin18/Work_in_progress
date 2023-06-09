@@ -6,13 +6,14 @@ using UnityEngine.InputSystem;
 
 public class playerController : MonoBehaviour
 {
-    //private Animator animator;
+    private Animator animator;
     private Rigidbody2D rigidBody;
     public GameObject deadBody; //reference to a dead body for a multiplayer level
 
     private Vector2 direction = Vector2.zero;
     public float movementSpeed = 2.0f;
     private bool facingRight = true;
+    public bool isMovementBlocked = false;
 
     private Vector2 startingPosition = new Vector2(-10, 0); //starting point of any level
 
@@ -20,14 +21,15 @@ public class playerController : MonoBehaviour
     void Start()
     {
         gameObject.transform.position = startingPosition;
-        //animator = this.GetComponent<Animator>(); //for animations
+        animator = this.GetComponent<Animator>(); //for animations
         rigidBody = this.GetComponent<Rigidbody2D>(); //aka player body
         Physics.IgnoreLayerCollision(6, 7); //ignores collisions betweeen layer 6 (Player) and 7 (Finish)
     }
-    
+
     void FixedUpdate()
     {
         rigidBody.rotation = 0f; //to make sure player character does not spin around
+
         rigidBody.velocity = direction * movementSpeed;
 
         //flipping from left to right, might change to also flip vertically
@@ -36,13 +38,18 @@ public class playerController : MonoBehaviour
             _Flip();
         }
         //setting variables to go between animation states
-        if (direction != Vector2.zero)
+        /*if (direction != Vector2.zero)
         {
-            //animator.SetBool("isWalking", true);
+            animator.SetBool("isWalking", true);
         }
         else
         {
+            animator.SetBool("isWalking", false);
+        }*/
+        if (direction == Vector2.zero)
+        {
             //animator.SetBool("isWalking", false);
+            animator.SetInteger("WalkingDirection", 0);
         }
     }
 
@@ -51,7 +58,20 @@ public class playerController : MonoBehaviour
     {
         //animator.SetBool("isWalking", true);
         //Debug.Log(direction); //for testing purposes
-        direction = context.action.ReadValue<Vector2>();
+        if (!isMovementBlocked)
+        {
+            direction = context.action.ReadValue<Vector2>();
+            animator.SetInteger("WalkingDirection", Math.Abs(direction.x) > Math.Abs(direction.y) ? 1 : direction.y > 0 ? 2 : 3);
+        }
+        /*        if (Math.Abs(direction.x) > Math.Abs(direction.y))
+                {
+                    animator.SetInteger("walikingVariante", 1);
+                }
+                else
+                {
+                    animator.SetInteger("walikingVariante", Math.Abs(direction.x) > Math.Abs(direction.y) ? 1 : direction.y > 0 ? 2 : 3);
+                }*/
+
     }
 
     //flips player character horizontally
@@ -63,15 +83,7 @@ public class playerController : MonoBehaviour
         transform.localScale = localscale;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Attack")
-        {
-            Die();
-        }
-    }
-
-    private void Die()
+    public void Die()
     {
         deadBody.transform.position = gameObject.transform.position; //teleport dead body to current position
         gameObject.transform.position = startingPosition; //reset player position
