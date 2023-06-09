@@ -11279,6 +11279,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6038421692742729793, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
+      propertyPath: audioText
+      value: "To bardzo d\u0142uga wypowied\u017A, kt\xF3ra na pewno nie przepe\u0142ni
+        ekranu i napewno nie pisz\u0119 jej spejalnie po to"
+      objectReference: {fileID: 0}
     - target: {fileID: 6038421692742729794, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: m_Name
       value: Intro

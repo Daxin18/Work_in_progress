@@ -31,7 +31,6 @@ public class playerController : MonoBehaviour
         rigidBody.rotation = 0f; //to make sure player character does not spin around
 
         rigidBody.velocity = direction * movementSpeed;
-        
 
         //flipping from left to right, might change to also flip vertically
         if ((!facingRight && direction.x > 0f) || (facingRight && direction.x < 0f))

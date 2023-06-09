@@ -7,6 +7,7 @@ using UnityEngine;
 public class TimeTravelInteraction : InteractionMechanic
 {
     public bool inRange = false;
+    public int tooMuchTravel = 30;
 
     private Transform now;
     private Transform future;
@@ -19,7 +20,7 @@ public class TimeTravelInteraction : InteractionMechanic
             int travelCount = GameObject.FindGameObjectWithTag("TimeTravel").GetComponent<TimeTravelTracking>().incrementTravelCount();
             if (travelCount == 1)
                 CommentEvent("FirstTimeTravel");
-            if (travelCount == 30)
+            if (travelCount == tooMuchTravel)
                 CommentEvent("TooMuchTravel");
             Vector3 helper = now.position;
             now.position = future.position;

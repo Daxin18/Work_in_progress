@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec4141ac51a1f6439d01551ff897a9d, type: 3}
   m_Name: LeverInteraction
   m_EditorClassIdentifier: 
-  name: 
-  cooldownTime: 0
-  lever: {fileID: 0}
-  door: {fileID: 0}
+  name: Lever
+  cooldownTime: 0.1
+  inRange: 0
