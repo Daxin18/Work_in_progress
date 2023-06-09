@@ -8,7 +8,7 @@ public class LeverBehaviourManager : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameObject door = GameObject.Find("Door");
-        Destroy(door);
+        door.GetComponent<Animator>().SetBool("IsOpened", !door.GetComponent<Animator>().GetBool("IsOpened"));
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

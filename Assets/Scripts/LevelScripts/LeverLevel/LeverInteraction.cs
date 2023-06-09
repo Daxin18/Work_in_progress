@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu] //this makes it so we can create object in unity and change all the InteractionMechanic variables
 public class LeverInteraction : InteractionMechanic //just a test mechanic to see if everything works
@@ -20,18 +21,10 @@ public class LeverInteraction : InteractionMechanic //just a test mechanic to se
                 GameObject lever = GameObject.Find("Lever");
                 if (lever != null)
                 {
+                    lever.GetComponent<Animator>().SetTrigger("Open");
                     lever.GetComponent<Animator>().SetBool("LeverUp", true);
+                    return true;
                 }
-
-                //
-                // deleting doors in LeverBehaviourManager.cs (aka script for LeverUp state)
-                //
-
-                return true;
-            }
-            else
-            {
-                //Debug.Log("No door found");
             }
         }
         return false;
