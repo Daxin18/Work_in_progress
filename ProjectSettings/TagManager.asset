@@ -10,6 +10,7 @@ TagManager:
   - DeadBody
   - Multiplayer
   - DataFlow
+  - AILever
   layers:
   - Default
   - TransparentFX

@@ -14,8 +14,9 @@ public class AILever : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lever = GameObject.Find("Lever");
         rigidBody = this.GetComponent<Rigidbody2D>();
+        //coroutine to prevent setting lever as a lever from the previous level (which, surprise, breaks the game)
+        StartCoroutine(AssignLeverShortlyAfterLoad());
     }
 
     // Update is called once per frame
@@ -24,21 +25,40 @@ public class AILever : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.transform.position);
         if (distance <= escapeRange)
         {
-            lever.GetComponent<Animator>().SetBool("IsRunning", true);
+            if(lever != null)
+            {
+                lever.GetComponent<Animator>().SetBool("IsRunning", true);
+            }
             Vector2 direction = transform.position - player.transform.position;
             rigidBody.velocity = direction.normalized * leverSpeed;
         }
         else
         {
             if (distance > escapeRange + .05f)
-                lever.GetComponent<Animator>().SetBool("IsRunning", false);
+            {
+                if (lever != null)
+                {
+                    lever.GetComponent<Animator>().SetBool("IsRunning", false);
+                }
+            }
             rigidBody.velocity = Vector2.zero;
         }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        TeleportToStart();
+    }
+
+    public void TeleportToStart()
+    {
         transform.position = Vector3.zero;
         lever.GetComponent<Animator>().SetBool("IsRunning", false);
+    }
+
+    private IEnumerator AssignLeverShortlyAfterLoad()
+    {
+        yield return new WaitForSeconds(0.5f);
+        lever = GameObject.Find("Lever");
     }
 }
