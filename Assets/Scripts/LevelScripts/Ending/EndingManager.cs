@@ -36,7 +36,7 @@ public class EndingManager : MonoBehaviour
 
     public void Do(int i)
     {
-        Debug.Log(i);
+        //Debug.Log(i);
         StartCoroutine(Shake(i + 1));
     }
 
