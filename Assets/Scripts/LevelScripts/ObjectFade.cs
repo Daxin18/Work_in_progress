@@ -12,7 +12,7 @@ public class ObjectFade : MonoBehaviour
     private void Start()
     {
         objectSpriteRenderer = transform.Find("COVER").GetComponent<SpriteRenderer>();
-        Debug.Log(objectSpriteRenderer);
+        //Debug.Log(objectSpriteRenderer);
     }
 
     private void Update()

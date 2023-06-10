@@ -11,6 +11,8 @@ public class AILever : MonoBehaviour
     public GameObject player;
     private Rigidbody2D rigidBody;
 
+    private bool alreadySaid = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,12 @@ public class AILever : MonoBehaviour
             }
             Vector2 direction = transform.position - player.transform.position;
             rigidBody.velocity = direction.normalized * leverSpeed;
+            if(!alreadySaid)
+            {
+                NarratorManager narrator = GameObject.Find("NarratorManager").GetComponent<NarratorManager>();
+                narrator.Say("FirstRun");
+                alreadySaid = true;
+            }
         }
         else
         {
