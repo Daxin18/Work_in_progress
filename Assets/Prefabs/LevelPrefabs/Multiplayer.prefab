@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finish: {fileID: 8502348975121207495}
-  nextLevel: {fileID: 7733765404938931539, guid: 46ccc44c6e6ffd34b8455d2e4923ce2f, type: 3}
+  nextLevel: {fileID: 4865667290161154319, guid: f86b0f139549a1b48b638cc3d1a8248b, type: 3}
   enableMovementFromBeggining: 1
 --- !u!114 &8968246049815904301
 MonoBehaviour:
