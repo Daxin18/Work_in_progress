@@ -20,10 +20,16 @@ public class playerController : MonoBehaviour
 
     private Vector2 startingPosition = new Vector2(-10, 0); //starting point of any level
 
+    public bool spawnInTheMiddle = false;
+
     // Start is called before the first frame update
     void Start()
     {
         gameObject.transform.position = startingPosition;
+        if (spawnInTheMiddle)
+        {
+            gameObject.transform.position = Vector2.zero;
+        }
         animator = this.GetComponent<Animator>(); //for animations
         rigidBody = this.GetComponent<Rigidbody2D>(); //aka player body
         Physics.IgnoreLayerCollision(6, 7); //ignores collisions betweeen layer 6 (Player) and 7 (Finish)

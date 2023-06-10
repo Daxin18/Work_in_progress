@@ -7,6 +7,9 @@ public class KillCounter : MonoBehaviour
     public int counter = 0;
     public int killThreshold = 30;
 
+    private bool saidFK = false;
+    private bool saidAXK = false;
+
     public void Start()
     {
         counter = 0;
@@ -15,19 +18,38 @@ public class KillCounter : MonoBehaviour
     {
         if (counter == 1)
         {
-            GameObject narrator = GameObject.Find("NarratorManager");
-            if (narrator != null)
-                narrator.GetComponent<NarratorManager>().Say("FirstKill");
+            if (!saidFK)
+            {
+                GameObject narrator = GameObject.Find("NarratorManager");
+                if (narrator != null)
+                    narrator.GetComponent<NarratorManager>().Say("FirstKill");
+                saidFK = true;
+            }
+            UnlockPlayer2();
         }
         else if (counter == killThreshold)
         {
-            GameObject narrator = GameObject.Find("NarratorManager");
-            if (narrator != null)
-                narrator.GetComponent<NarratorManager>().Say("AfterXKills");
+            if(!saidAXK)
+            {
+                GameObject narrator = GameObject.Find("NarratorManager");
+                if (narrator != null)
+                    narrator.GetComponent<NarratorManager>().Say("AfterXKills");
+                saidAXK = true;
+            }
         }
     }
     public void countKill()
     {
         counter++;
+    }
+
+    private void UnlockPlayer2()
+    {
+        var player = GameObject.Find("Player_2");
+        if(player != null)
+        {
+            player.GetComponent<playerController>().isMovementBlocked = false;
+            player.GetComponent<MechanicHolder>().isInteractionBlocked = false;
+        }
     }
 }
