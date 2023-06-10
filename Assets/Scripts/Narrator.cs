@@ -11,8 +11,8 @@ public class Narrator : MonoBehaviour
     public GameObject canvas;
     public GameObject nextAudio;
     
-    private bool alreadySaid = false;
-    private bool isEnded = false;
+    public bool alreadySaid = false;
+    public bool isEnded = false;
     private AudioSource source;
 
     public void Start()
