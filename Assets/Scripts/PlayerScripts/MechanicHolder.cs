@@ -8,6 +8,8 @@ public class MechanicHolder : MonoBehaviour
     public InteractionMechanic mechanic;
     float cooldownTime;
 
+    public bool isInteractionBlocked = false;
+
     enum InteractionState
     {
         ready,
@@ -33,15 +35,18 @@ public class MechanicHolder : MonoBehaviour
 
     public void _Interact()
     {
-        if(state == InteractionState.ready)
+        if(!isInteractionBlocked)
         {
-            if(mechanic != null)
+            if (state == InteractionState.ready)
             {
-                bool success = mechanic.Interact(gameObject); //aka self
-                if (success)
+                if (mechanic != null)
                 {
-                    state = InteractionState.cooldown;
-                    cooldownTime = mechanic.cooldownTime;
+                    bool success = mechanic.Interact(gameObject); //aka self
+                    if (success)
+                    {
+                        state = InteractionState.cooldown;
+                        cooldownTime = mechanic.cooldownTime;
+                    }
                 }
             }
         }

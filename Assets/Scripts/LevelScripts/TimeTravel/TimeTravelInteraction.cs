@@ -33,6 +33,8 @@ public class TimeTravelInteraction : InteractionMechanic
             GameObject.FindGameObjectWithTag("TimeTravel").GetComponent<TimeTravelTracking>().TakeGlove();
             now = GameObject.Find("Now").transform;
             future = GameObject.Find("Future").transform;
+            var glove = GameObject.Find("TimeTravelGlove");
+            Destroy(glove);
             return true;
         }
         return false;

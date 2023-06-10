@@ -11,6 +11,7 @@ TagManager:
   - Multiplayer
   - DataFlow
   - AILever
+  - ENDING
   layers:
   - Default
   - TransparentFX

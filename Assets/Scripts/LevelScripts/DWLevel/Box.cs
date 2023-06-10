@@ -50,6 +50,7 @@ public class Box : MonoBehaviour
         {
             //GameObject.FindGameObjectWithTag("Player").SetActive(true);
             player.SetActive(true);
+            player.GetComponent<playerController>().isMovementBlocked = false;
         }
         return true;
     }

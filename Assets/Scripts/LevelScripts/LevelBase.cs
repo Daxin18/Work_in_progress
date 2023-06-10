@@ -8,6 +8,7 @@ public class LevelBase : MonoBehaviour
 {
     public GameObject finish;
     public GameObject nextLevel;
+    public bool enableMovementFromBeggining = false;
 
     private int id = 0; //don't really think it's useful, but gonna leave it here for now
 
@@ -15,7 +16,10 @@ public class LevelBase : MonoBehaviour
     private void Start()
     {
         playerController player = transform.Find("Player").GetComponent<playerController>();
-        player.isMovementBlocked = true;
+        if(!enableMovementFromBeggining)
+        {
+            player.isMovementBlocked = true;
+        }
         //there must be a way to do it more elegantly, but it'll do for now
         foreach (Transform child in gameObject.transform)
         {
@@ -33,7 +37,7 @@ public class LevelBase : MonoBehaviour
         gameObject.GetComponent<ObjectFade>().StartFadeIn();
         //first narrator text in the level has to be named Intro
         StartCoroutine(WaitAndSay());
-        StartCoroutine(UnlockMovement());
+        //StartCoroutine(UnlockMovement());
     }
 
     IEnumerator WaitAndSay()

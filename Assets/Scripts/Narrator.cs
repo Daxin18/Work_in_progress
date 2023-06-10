@@ -11,8 +11,8 @@ public class Narrator : MonoBehaviour
     public GameObject canvas;
     public GameObject nextAudio;
     
-    private bool alreadySaid = false;
-    private bool isEnded = false;
+    public bool alreadySaid = false;
+    public bool isEnded = false;
     private AudioSource source;
 
     public void Start()
@@ -41,6 +41,11 @@ public class Narrator : MonoBehaviour
                         GameObject manager = GameObject.Find("NarratorManager");
                         if (manager != null)
                             manager.GetComponent<NarratorManager>().EndSpeech();
+                        GameObject player = GameObject.Find("Player");
+                        if(player != null)
+                        {
+                            player.GetComponent<playerController>().isMovementBlocked = false;
+                        }
                         isEnded = true;
                     }
                 }
