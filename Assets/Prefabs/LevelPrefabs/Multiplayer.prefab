@@ -11398,6 +11398,10 @@ PrefabInstance:
       propertyPath: deadBody
       value: 
       objectReference: {fileID: 5812907352104507138}
+    - target: {fileID: 5291601999885121219, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
+      propertyPath: isMovementBlocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5291601999885121220, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11552,6 +11556,10 @@ PrefabInstance:
       propertyPath: deadBody
       value: 
       objectReference: {fileID: 5812907352104507138}
+    - target: {fileID: 5291601999885121219, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
+      propertyPath: isMovementBlocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5291601999885121220, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -11604,6 +11612,10 @@ PrefabInstance:
       propertyPath: mechanic
       value: 
       objectReference: {fileID: 11400000, guid: eec2dd92f31db5b4abbedcd9d7a2aed2, type: 2}
+    - target: {fileID: 5291601999885121231, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
+      propertyPath: isInteractionBlocked
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
 --- !u!114 &2044171920310102867 stripped

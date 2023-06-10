@@ -41,6 +41,7 @@ public class Narrator : MonoBehaviour
                         GameObject manager = GameObject.Find("NarratorManager");
                         if (manager != null)
                             manager.GetComponent<NarratorManager>().EndSpeech();
+                        GameObject.Find("Player").GetComponent<playerController>().isMovementBlocked = false;
                         isEnded = true;
                     }
                 }

@@ -33,7 +33,7 @@ public class LevelBase : MonoBehaviour
         gameObject.GetComponent<ObjectFade>().StartFadeIn();
         //first narrator text in the level has to be named Intro
         StartCoroutine(WaitAndSay());
-        StartCoroutine(UnlockMovement());
+        //StartCoroutine(UnlockMovement());
     }
 
     IEnumerator WaitAndSay()
