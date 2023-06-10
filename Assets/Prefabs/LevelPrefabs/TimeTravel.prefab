@@ -2678,6 +2678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finish: {fileID: 3784031709727282089}
   nextLevel: {fileID: 6410008408567655001, guid: c114f078cf9e826439dae4a1caec7a7a, type: 3}
+  enableMovementFromBeggining: 0
 --- !u!114 &2571620902904506392
 MonoBehaviour:
   m_ObjectHideFlags: 0

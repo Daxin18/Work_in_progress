@@ -3941,6 +3941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a26d63457be0074bb4623f373fb67dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeThreshold: 20
 --- !u!1 &6415306712320599221
 GameObject:
   m_ObjectHideFlags: 0
@@ -5234,6 +5235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finish: {fileID: 7733765406000230702}
   nextLevel: {fileID: 2978907199447880381, guid: 9762793c4483cc849889552a6ea21040, type: 3}
+  enableMovementFromBeggining: 0
 --- !u!114 &4898132297061395226
 MonoBehaviour:
   m_ObjectHideFlags: 0
