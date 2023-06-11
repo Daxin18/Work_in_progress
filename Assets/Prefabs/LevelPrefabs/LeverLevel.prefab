@@ -11009,7 +11009,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 94a403c5f2473d64cb2a32471ce8b766, type: 3}
     - target: {fileID: 6038421692742729793, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: audioText
-      value: "Ciekawe, co trzeba tutaj zrobi\u0107\u2026"
+      value: "Hmm... ciekawe, co trzeba tutaj zrobi\u0107\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 6038421692742729794, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: m_Name

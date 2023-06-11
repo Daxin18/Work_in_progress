@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: 0
-  killThreshold: 4
+  killThreshold: 10
 --- !u!114 &7191350596540332387
 MonoBehaviour:
   m_ObjectHideFlags: 0
