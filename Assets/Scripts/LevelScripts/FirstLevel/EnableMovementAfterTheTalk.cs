@@ -21,7 +21,6 @@ public class EnableMovementAfterTheTalk : MonoBehaviour
                 if(!enabledMovement)
                 {
                     FirstLevel script = GameObject.FindGameObjectWithTag("First level").GetComponent<FirstLevel>();
-                    Debug.Log(script);
                     script.NISInstalled = true;
                     GameObject.Find("Player").GetComponent<playerController>().isMovementBlocked = false;
                     GameObject.Find("Player").GetComponent<MechanicHolder>().isInteractionBlocked = false;
