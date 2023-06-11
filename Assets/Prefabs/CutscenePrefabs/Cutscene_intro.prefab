@@ -84,7 +84,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoFileName: Intro.mov
   next: {fileID: 7733765404938931539, guid: 46ccc44c6e6ffd34b8455d2e4923ce2f, type: 3}
-  first: {fileID: 0}
 --- !u!1 &6366737530188377488
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +402,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6496839628033222325}
     m_Modifications:
+    - target: {fileID: 6038421692215539244, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 854
+      objectReference: {fileID: 0}
     - target: {fileID: 6038421692742729792, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -468,6 +471,14 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 8c08a5af2f821c14d8e20bf163567814, type: 3}
+    - target: {fileID: 6038421693010266425, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820538064123195084, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
 --- !u!1001 &6366737531009339362

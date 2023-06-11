@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class Narrator : MonoBehaviour
 {
     public AudioClip audio;
     public string audioText;
-    public Text textObject;
+    public TextMeshProUGUI textObject;
     public GameObject canvas;
     public GameObject nextAudio;
     
