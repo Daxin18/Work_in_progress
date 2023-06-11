@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: ENDING
   cooldownTime: 3
+  outroCutscene: {fileID: 276024740206848188, guid: 49d3c9838f138724280373e8b23ef9da, type: 3}

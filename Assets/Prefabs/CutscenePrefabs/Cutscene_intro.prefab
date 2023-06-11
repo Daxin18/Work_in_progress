@@ -43,7 +43,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6366737530117129757}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: cdb3e41270616f8409ee62b9c23447e2, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -64,10 +64,10 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!114 &6366737530117129758
@@ -82,7 +82,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190fcedcd80ef9645a4dd5ba1fa65218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstLevel: {fileID: 7733765404938931539, guid: 46ccc44c6e6ffd34b8455d2e4923ce2f, type: 3}
+  videoFileName: Intro.mov
+  next: {fileID: 7733765404938931539, guid: 46ccc44c6e6ffd34b8455d2e4923ce2f, type: 3}
+  first: {fileID: 0}
 --- !u!1 &6366737530188377488
 GameObject:
   m_ObjectHideFlags: 0

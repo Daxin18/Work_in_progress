@@ -13,11 +13,9 @@ public class LevelManager : MonoBehaviour
         if (PlayerPrefs.HasKey("Level"))
         {
             int level = PlayerPrefs.GetInt("Level");
-            if (level != 0)
-            {
-                Instantiate(levels[level]);
-                Destroy(startLevel);
-            }
+            Debug.Log(level);
+            Instantiate(levels[level]);
+            Destroy(startLevel);
         }
     }
 

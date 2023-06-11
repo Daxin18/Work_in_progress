@@ -217,7 +217,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276024740206848188}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 9ae56acee0851484fa4976731dc21ed4, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -238,10 +238,10 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!114 &276024740206848191
@@ -256,7 +256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190fcedcd80ef9645a4dd5ba1fa65218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstLevel: {fileID: 7733765404938931539, guid: 46ccc44c6e6ffd34b8455d2e4923ce2f, type: 3}
+  videoFileName: Outro.mov
+  next: {fileID: 0}
+  first: {fileID: 6366737530117129757, guid: 812b1c76b2875e04a806d7adafffe28e, type: 3}
 --- !u!1001 &276024738911723843
 PrefabInstance:
   m_ObjectHideFlags: 0
