@@ -186,6 +186,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2551956458507667280, guid: 44330feb60a287c4fac1b09f62f4c427, type: 3}
+      propertyPath: m_Text
+      value: Work_in_progress
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551956458507667280, guid: 44330feb60a287c4fac1b09f62f4c427, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551956458507667283, guid: 44330feb60a287c4fac1b09f62f4c427, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 397.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551956458507667283, guid: 44330feb60a287c4fac1b09f62f4c427, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00088596
+      objectReference: {fileID: 0}
     - target: {fileID: 2551956458742748905, guid: 44330feb60a287c4fac1b09f62f4c427, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
