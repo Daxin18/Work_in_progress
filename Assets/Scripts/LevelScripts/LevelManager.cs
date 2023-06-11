@@ -5,7 +5,6 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public List<GameObject> levels;
-    public GameObject startLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +14,6 @@ public class LevelManager : MonoBehaviour
             int level = PlayerPrefs.GetInt("Level");
             Debug.Log(level);
             Instantiate(levels[level]);
-            Destroy(startLevel);
         }
     }
 
