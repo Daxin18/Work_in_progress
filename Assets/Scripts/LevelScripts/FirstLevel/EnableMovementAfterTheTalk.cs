@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnableMovementAfterTheTalk : MonoBehaviour
 {
-    private AudioSource source;
     private Narrator narrator;
+    private bool enabledMovement = false;
 
     private void Start()
     {
-        source = GetComponent<AudioSource>();
         narrator = GetComponent<Narrator>();
     }
 
@@ -17,14 +16,16 @@ public class EnableMovementAfterTheTalk : MonoBehaviour
     {
         if (narrator.alreadySaid)
         {
-            if (!source.isPlaying)
+            if (narrator.isEnded)
             {
-                if (!narrator.isEnded)
+                if(!enabledMovement)
                 {
-                    FirstLevel script = GameObject.Find("First level").GetComponent<FirstLevel>();
+                    FirstLevel script = GameObject.FindGameObjectWithTag("First level").GetComponent<FirstLevel>();
+                    Debug.Log(script);
                     script.NISInstalled = true;
                     GameObject.Find("Player").GetComponent<playerController>().isMovementBlocked = false;
                     GameObject.Find("Player").GetComponent<MechanicHolder>().isInteractionBlocked = false;
+                    enabledMovement = true;
                 }
             }
         }

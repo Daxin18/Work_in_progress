@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 1882977302}
   m_Layer: 0
   m_Name: First level
-  m_TagString: Untagged
+  m_TagString: First level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11044,6 +11044,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
+--- !u!114 &6038421692222218380 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6038421692742729793, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
+  m_PrefabInstance: {fileID: 521838797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038421692222218383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e65fc983957cc49903f95893bd7942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &6038421692222218382 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6038421692742729795, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
+  m_PrefabInstance: {fileID: 521838797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6038421692222218383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6038421692742729794, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
@@ -11061,6 +11077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bd9ce65ec69de74e8195179eba9adec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 6038421692222218382}
+  narrator: {fileID: 6038421692222218380}
 --- !u!1001 &639214630
 PrefabInstance:
   m_ObjectHideFlags: 0
