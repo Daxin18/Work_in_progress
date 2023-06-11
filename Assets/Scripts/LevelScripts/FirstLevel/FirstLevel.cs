@@ -7,18 +7,17 @@ public class FirstLevel : MonoBehaviour
     public float waitTime = 3f;
 
     public bool NISInstalled = false; //NIS - New Input System
-    private GameObject player;
+    public GameObject player;
 
     void Start()
     {
-        player = GameObject.Find("Player");
         player.GetComponent<MechanicHolder>().isInteractionBlocked = true;
         StartCoroutine(WaitForInstall());
     }
 
     private void Update()
     {
-        if(!NISInstalled)
+        if (!NISInstalled)
         {
             player.GetComponent<playerController>().isMovementBlocked = true;
         }

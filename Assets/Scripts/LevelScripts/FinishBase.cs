@@ -25,6 +25,8 @@ public class FinishBase : MonoBehaviour
 
         yield return new WaitForSeconds(ObjectFade.fadeDuration);
 
+        PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+
         Instantiate(nextLevel);
         Destroy(currentLevel);
     }
