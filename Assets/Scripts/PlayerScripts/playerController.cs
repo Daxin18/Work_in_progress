@@ -38,13 +38,37 @@ public class playerController : MonoBehaviour
     void FixedUpdate()
     {
         //rigidBody.rotation = 0f; //to make sure player character does not spin around
-
         rigidBody.velocity = direction * movementSpeed;
 
         if(invertMovement)
         {
+            /*float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            // Pobierz aktualn¹ rotacjê postaci
+            Quaternion rotation = transform.rotation;
+
+            // Konwertuj rotacjê na k¹t w stopniach
+            float angle = rotation.eulerAngles.z;
+
+            // Oblicz nowy kierunek poruszania siê postaci na podstawie k¹ta
+            Vector2 movementDirection = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+
+            // Oblicz wektor prêdkoœci na podstawie wejœcia u¿ytkownika
+            Vector3 velocity = new Vector3(movementDirection.x, movementDirection.y, 0f) * movementSpeed;
+            velocity += new Vector3(horizontalInput, verticalInput, 0f) * movementSpeed;
+
+            // Dodaj si³ê do ruchu postaci
+            transform.position += velocity * Time.deltaTime;*/
+            /*Quaternion rotation = transform.rotation;
+            float angle = rotation.eulerAngles.z;
+            Vector2 movementDirection = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+            float horizontalInput = Input.GetAxis("Horizontal");
+            transform.position += new Vector3(movementDirection.x, movementDirection.y, 0f) * horizontalInput * movementSpeed * Time.deltaTime;*/
+            //rigidBody.velocity *= -new Vector3(movementDirection.x, 0f, movementDirection.y);
             rigidBody.velocity *= -1;
         }
+        //else rigidBody.velocity = direction * movementSpeed;
 
         //flipping from left to right, might change to also flip vertically
         if ((!facingRight && direction.x > 0f) || (facingRight && direction.x < 0f))

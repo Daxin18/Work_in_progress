@@ -7,7 +7,7 @@ using UnityEngine;
 public class TimeTravelInteraction : InteractionMechanic
 {
     public bool inRange = false;
-    public int tooMuchTravel = 30;
+    public int tooMuchTravel = 12;
 
     private Transform now;
     private Transform future;

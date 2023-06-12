@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 1882977302}
   m_Layer: 0
   m_Name: First level
-  m_TagString: Untagged
+  m_TagString: First level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,6 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 10
   NISInstalled: 0
+  player: {fileID: 5677007039262557671}
 --- !u!1 &7733765405993139010
 GameObject:
   m_ObjectHideFlags: 0
@@ -11355,6 +11356,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7733765404938931540}
     m_Modifications:
+    - target: {fileID: 5291601999885121217, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291601999885121217, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 4f675fba-ca61-44b3-9bbf-8d220c88aecc
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291601999885121217, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: Player_1/EndingInteraction[/Keyboard/x]
+      objectReference: {fileID: 0}
     - target: {fileID: 5291601999885121219, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
       propertyPath: isMovementBlocked
       value: 1
@@ -11420,6 +11433,11 @@ PrefabInstance:
 --- !u!4 &5677007039262557669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5291601999885121220, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
+  m_PrefabInstance: {fileID: 551493220186796833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5677007039262557671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5291601999885121222, guid: 650ea3e674733ef45a6c7964cdb97885, type: 3}
   m_PrefabInstance: {fileID: 551493220186796833}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1733934853593187535

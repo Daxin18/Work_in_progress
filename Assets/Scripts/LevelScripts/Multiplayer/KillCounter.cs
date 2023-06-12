@@ -27,7 +27,7 @@ public class KillCounter : MonoBehaviour
             }
             UnlockPlayer2();
         }
-        else if (counter == killThreshold)
+        else if (counter >= killThreshold)
         {
             if(!saidAXK)
             {

@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Time travel
   cooldownTime: 1
   inRange: 0
-  isGloveOn: 0
+  tooMuchTravel: 10
