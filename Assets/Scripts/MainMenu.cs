@@ -13,6 +13,10 @@ public class MainMenu : MonoBehaviour
 
     public void Continue()
     {
+        if (!PlayerPrefs.HasKey("Level"))
+        {
+            PlayerPrefs.SetInt("Level", 0);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
