@@ -16313,8 +16313,8 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 83082a84d05037c4eb35e9da9c0fed49, type: 3}
     - target: {fileID: 6038421692742729793, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: audioText
-      value: "Nosz japie*****! Nie gadaj, \u017Ce przestaniesz teraz robi\u0107 gr\u0119
-        dla hurtowni!"
+      value: "Nosz japie******! Nie gadaj, \u017Ce przestaniesz teraz robi\u0107
+        gr\u0119 dla hurtowni!"
       objectReference: {fileID: 0}
     - target: {fileID: 6038421692742729793, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: nextAudio

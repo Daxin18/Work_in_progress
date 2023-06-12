@@ -258,7 +258,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoFileName: Outro.mov
   next: {fileID: 0}
-  first: {fileID: 6366737530117129757, guid: 812b1c76b2875e04a806d7adafffe28e, type: 3}
 --- !u!1001 &276024738911723843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -394,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 1d2e8b8d4ea2b6e4396693cae7ae5252, type: 3}
     - target: {fileID: 6038421692742729793, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: audioText
-      value: "Ale poje**** sen\u2026"
+      value: "Ale poje***** sen\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 6038421692742729793, guid: c598ca001b66bfe4ca45e906f3f1a2c3, type: 3}
       propertyPath: nextAudio
