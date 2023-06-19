@@ -5,17 +5,21 @@ using UnityEngine;
 public class AILever : MonoBehaviour
 {
     public float escapeRange = 3.5f;
-    public float leverSpeed = 5f;
 
     private GameObject lever;
     public GameObject player;
     private Rigidbody2D rigidBody;
+    public GameObject cage;
 
-    private bool alreadySaid = false;
+    private int cageTeleportThreshold = 5;
+    private int teleportCounter = 0;
+    private bool caged = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        teleportCounter = 0;
+        cage.SetActive(false);
         rigidBody = this.GetComponent<Rigidbody2D>();
         //coroutine to prevent setting lever as a lever from the previous level (which, surprise, breaks the game)
         StartCoroutine(AssignLeverShortlyAfterLoad());
@@ -24,38 +28,42 @@ public class AILever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance <= escapeRange)
+        if (!caged)
         {
-            if(lever != null)
-            {
-                lever.GetComponent<Animator>().SetBool("IsRunning", true);
-            }
-            Vector2 direction = transform.position - player.transform.position;
-            rigidBody.velocity = direction.normalized * leverSpeed;
-            if(!alreadySaid)
-            {
-                NarratorManager narrator = GameObject.Find("NarratorManager").GetComponent<NarratorManager>();
-                narrator.Say("FirstRun");
-                alreadySaid = true;
-            }
-        }
-        else
-        {
-            if (distance > escapeRange + .05f)
+            float distance = Vector2.Distance(transform.position, player.transform.position);
+            if (distance <= escapeRange)
             {
                 if (lever != null)
                 {
-                    lever.GetComponent<Animator>().SetBool("IsRunning", false);
+                    lever.GetComponent<Animator>().SetBool("IsRunning", true);
                 }
             }
-            rigidBody.velocity = Vector2.zero;
+            else
+            {
+                if (distance > escapeRange + .05f)
+                {
+                    if (lever != null)
+                    {
+                        lever.GetComponent<Animator>().SetBool("IsRunning", false);
+                    }
+                }
+                rigidBody.velocity = Vector2.zero;
+            }
         }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         TeleportToStart();
+        if(!caged)
+        {
+            teleportCounter++;
+            if (teleportCounter >= cageTeleportThreshold)
+            {
+                caged = true;
+                lever.GetComponent<Animator>().SetTrigger("Cage");
+            }
+        }
     }
 
     public void TeleportToStart()
